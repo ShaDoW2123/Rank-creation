@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .about-grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .feature-title {
+                font-size: 24px;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-grid-container">
+        <h2 class="section-title">Here are a few of our stand-out features.</h2>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    SEO Trial Icon
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">We offer a free SEO trial.</h3>
+                    <p class="feature-description">
+                        We're offering a FREE SEO trial for the first time ever, which will enable business owners to first test our service, get an understanding of how it works and then take up a subscription plan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    Client Limit Icon
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">We take only 5 clients in a quarter.</h3>
+                    <p class="feature-description">
+                        We're strict to this principle, and do NOT take more than 5 clients in a quarter. It enables us to fully focus on our existing clients and deliver the best service to them.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    Privacy Icon
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">We respect our clients' privacy.</h3>
+                    <p class="feature-description">
+                        Our clients' privacy is our top priority. We never ever compromise on that. We not only keep their data secret, but also create a stress-free environment where they enjoy our cooperation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    Calendar Icon
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">We stay up-to-date.</h3>
+                    <p class="feature-description">
+                        There are a million things happening in the digital-tech industry every single moment. It's not easy to stay informed of all of that, but we keep track of the news that is important and necessary.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

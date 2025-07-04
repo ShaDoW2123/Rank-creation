@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services Overview</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .services-container-body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .services-container {
+        background-color: #d4f4dd;
+        border: 2px solid #a8d4b8;
+        border-radius: 12px;
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .services-main-heading {
+        text-align: center;
+        color: #2d1b69;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-decoration: underline;
+        text-decoration-color: #2d1b69;
+        text-underline-offset: 4px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .overview-box-divider {
+        background-color: #a8d4b8;
+        height: 200px;
+        width: 1px;
+      }
+
+      .service-column h3 {
+        color: #2d1b69;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .service-list {
+        list-style: none;
+      }
+
+      .service-item {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .service-item::before {
+        content: "≫";
+        color: #e74c3c;
+        font-weight: bold;
+        margin-right: 8px;
+        font-size: 14px;
+      }
+
+      .service-item a {
+        color: #2d1b69;
+        text-decoration: underline;
+        text-decoration-color: #2d1b69;
+        text-underline-offset: 2px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .service-item a:hover {
+        text-decoration-thickness: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .overview-box-divider {
+          display: none;
+        }
+
+        .services-container {
+          padding: 30px 20px;
+        }
+
+        .services-main-heading {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="services-container-body">
+      <div class="services-container">
+        <h1 class="services-main-heading">Overview of Our Services</h1>
+
+        <div class="services-grid">
+          <div class="service-column">
+            <h3>Marketing Services</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <a href="#organic-seo">Organic SEO</a>
+              </li>
+              <li class="service-item">
+                <a href="#paid-ads">Paid Ads Management</a>
+              </li>
+              <li class="service-item">
+                <a href="#social-media">Social Media Marketing</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="overview-box-divider"></div>
+
+          <div class="service-column">
+            <h3>Design Services</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <a href="#web-design">Web Design</a>
+              </li>
+              <li class="service-item">
+                <a href="#graphic-design">Graphic Design</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

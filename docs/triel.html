@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .services-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-stat {
+  text-align: center;
+  width: 160px;
+}
+
+.progress-wrapper {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  position: relative;
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 12;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: #00aaff;
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.progress-text {
+  fill: #333;
+  font-size: 22px;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Services Stats -->
+    <div class="services-stats-section">
+  <div class="services-stats">
+    <div class="service-stat">
+      <div class="progress-wrapper" data-percentage="99">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54" />
+          <text x="60" y="68" class="progress-text">0%</text>
+        </svg>
+      </div>
+      <h4>Organic SEO</h4>
+    </div>
+
+    <div class="service-stat">
+      <div class="progress-wrapper" data-percentage="95">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54" />
+          <text x="60" y="68" class="progress-text">0%</text>
+        </svg>
+      </div>
+      <h4>Paid Ads Management</h4>
+    </div>
+
+    <div class="service-stat">
+      <div class="progress-wrapper" data-percentage="96">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54" />
+          <text x="60" y="68" class="progress-text">0%</text>
+        </svg>
+      </div>
+      <h4>Social Media Marketing</h4>
+    </div>
+
+    <div class="service-stat">
+      <div class="progress-wrapper" data-percentage="98">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54" />
+          <text x="60" y="68" class="progress-text">0%</text>
+        </svg>
+      </div>
+      <h4>Web Design</h4>
+    </div>
+
+    <div class="service-stat">
+      <div class="progress-wrapper" data-percentage="93">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54" />
+          <text x="60" y="68" class="progress-text">0%</text>
+        </svg>
+      </div>
+      <h4>Graphic Design</h4>
+    </div>
+  </div>
+</div>
+
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrappers = document.querySelectorAll(".progress-wrapper");
+
+    wrappers.forEach(wrapper => {
+      const percentage = parseInt(wrapper.dataset.percentage);
+      const fill = wrapper.querySelector(".progress-ring-fill");
+      const text = wrapper.querySelector(".progress-text");
+
+      const radius = 54;
+      const circumference = 2 * Math.PI * radius;
+
+      fill.style.strokeDasharray = circumference;
+      fill.style.strokeDashoffset = circumference;
+
+      let current = 0;
+
+      const animate = () => {
+        const offset = circumference - (current / 100) * circumference;
+        fill.style.strokeDashoffset = offset;
+        text.textContent = `${current}%`;
+        if (current < percentage) {
+          current++;
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    });
+  });
+</script>
+
+  </body>
+</html>

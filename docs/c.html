@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rank Creation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .logo .rank {
+            color: #e91e63;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .free-trial-btn {
+            background: #e91e63;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .portfolio-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .main-heading {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .main-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .project-title {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+            text-align: left;
+        }
+
+        /* Single Project */
+        .single-project {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f5f5f5;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-section ul li a:hover {
+            color: #e91e63;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .facebook { background: #3b5998; }
+        .twitter { background: #1da1f2; }
+        .youtube { background: #ff0000; }
+        .linkedin { background: #0077b5; }
+        .instagram { background: #e4405f; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .main-heading {
+                font-size: 36px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="rank">.</span>Rank
+                    <div style="font-size: 10px; color: #666; font-weight: normal; letter-spacing: 2px;">CREATION</div>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="free-trial-btn">FREE TRIAL</a>
+                    <svg class="search-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="portfolio-section">
+                <div class="section-label">OUR PORTFOLIO</div>
+                <h1 class="main-heading">We're Proud of Our Projects.</h1>
+                <p class="main-description">
+                    We've worked on over a hundred big and small projects with a proven track record, and we're pleased to feature the following projects as part of our portfolio.
+                </p>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Caicos Waterfun" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-title">Caicos Waterfun</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Levergun Leatherworks" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-title">Levergun Leatherworks</div>
+                    </div>
+                </div>
+
+                <div class="single-project">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=250&width=500" alt="Greenwill" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="project-title">Greenwill</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <span class="rank">.</span>Rank
+                        <div style="font-size: 10px; color: #666; font-weight: normal; letter-spacing: 2px;">CREATION</div>
+                    </div>
+                    <p>We're a small agency with a big vision. The vision is to create an impact on our clients' lives and offer them the most pleasant experience ever.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon facebook">f</a>
+                        <a href="#" class="social-icon twitter">t</a>
+                        <a href="#" class="social-icon youtube">▶</a>
+                        <a href="#" class="social-icon linkedin">in</a>
+                        <a href="#" class="social-icon instagram">📷</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Company</h3>
+                    <ul>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CASE STUDIES</a></li>
+                        <li><a href="#">PAYPAL ID: billing@rankcreation.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Important Links</h3>
+                    <ul>
+                        <li><a href="#">SEO FREE TRIAL</a></li>
+                        <li><a href="#">#SaveEarth Campaign</a></li>
+                        <li><a href="#">#NoHunger Campaign</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><strong>Support Office:</strong></li>
+                        <li>Dhenkanal, Odisha, India</li>
+                        <li><strong>Admin Office:</strong></li>
+                        <li>Lake Tahoe, CA</li>
+                        <li>📞 +1 530 208 3600</li>
+                        <li>📧 +1 530 208 3600</li>
+                        <li>🌐 rankcreation</li>
+                        <li>✉️ sales@rankcreation.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2024 Rank Creation | All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
