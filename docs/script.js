@@ -48,3 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // progress bar End 
+
+
+// domain age start
+
+(function () {
+    const domainStartDate = new Date("2012-03-27");
+    const today = new Date();
+    const diffTime = today - domainStartDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    const years = Math.floor(diffDays / 365.25);
+    const remainingDays = diffDays - Math.floor(years * 365.25);
+
+    const badgeText = `Serving clients for ${years} years, ${remainingDays} days`;
+
+    document.getElementById("domainAgeBadge").innerText = badgeText;
+  })();
+
+
+// domain age end
+
+  
+  
