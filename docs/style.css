@@ -219,12 +219,14 @@ body {
   padding: 20px;
   margin: 30px auto 50px auto;
   max-width: 750px;
-  background-color: #a9d3a747;
-  border: none;
+  background-color: #edfaff;
+  /* border: none; */
   border-radius: 5px;
   font-size: 16px;
   color: #000;
   text-align: center;
+  border: 1px solid #6ec1e4;
+  text-transform: capitalize;
 }
 
 .domain-age-container i.fa-bullhorn {
