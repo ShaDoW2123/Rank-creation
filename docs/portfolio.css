@@ -52,6 +52,10 @@
             margin-bottom: 60px;
         }
 
+        .projects-grid a{
+            text-decoration: none;
+        }
+
         .project-card {
             background: white;
             border-radius: 8px;
