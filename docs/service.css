@@ -77,12 +77,13 @@ body {
 }
 
 
+
 .red-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  display: flex;
   background: radial-gradient(circle, red 40%, white 41%, red 100%);
+  flex-shrink: 0;
 }
 
 .blue-dot {
@@ -323,10 +324,33 @@ body {
 
 .section-tag {
   color: #f80035;
-  font-size: 0.9rem;
-  font-weight: bold;
   margin-bottom: 10px;
   display: flex;
+  align-items: center; /* aligns red dot and text vertically */
+  gap: 8px; /* spacing between dot and text */
+  text-align: center;
+    font-family: "Lexend", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+.section-tag-1{
+    color: #f80035;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* aligns red dot and text vertically */
+  gap: 8px; /* spacing between dot and text */
+  text-align: center;
+    font-family: "Lexend", Sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    justify-content: center;
 }
 .service-gap {
   gap: 20px;
