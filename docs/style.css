@@ -147,6 +147,90 @@ body {
   display: block;
 }
 
+/* Responsive Styles */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .nav {
+    gap: 20px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .header-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .header-inner-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header-right {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    height: 100vh;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .header-right.active {
+    transform: translateX(0);
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .search-container {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .search-input {
+    position: static;
+    width: 100%;
+  }
+
+  .search-input input {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .header-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hide menu toggle on desktop */
+.menu-toggle {
+  display: none;
+}
+
+
+
+
 /* Hero Section Start */
 .hero-sec {
   background: #ffffff;
