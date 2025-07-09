@@ -35,6 +35,9 @@
           </div>
 
           <div class="header-right">
+
+<div class="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+
             <nav>
               <ul class="nav">
                 <li><a href="index.html">Home</a></li>
@@ -816,5 +819,14 @@
     <!-- Footer Section End -->
 
     <script src="logo-carousal.js"></script>
+    <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const headerRight = document.querySelector('.header-right');
+
+  menuToggle.addEventListener('click', () => {
+    headerRight.classList.toggle('active');
+  });
+</script>
+
   </body>
 </html>
